@@ -24,25 +24,6 @@ export default class App extends React.Component {
         <UserNavigator/>
       </View>
     )
-    // const { formValue, textFormError, loaded } = this.state;
-    // if (!loaded) {
-    //   console.log('loading...');
-    //   return <Spinner/>
-    // } else {
-    //   return (
-    //     <View style={styles.container}>
-    //       <Form
-    //         ref="formLogin"
-    //         type={LoginStruct}
-    //         options={loginOptions}
-    //         value={formValue}
-    //         onChange={v => this.onChange(v)}
-    //       />
-    //       <Button title='Login' onPress={this.sendForm.bind(this)} />
-    //       <Text style={styles.textError}>{textFormError}</Text>
-    //     </View>
-    //   );
-    // }
   }
 }
 
