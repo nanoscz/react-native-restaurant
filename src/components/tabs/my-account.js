@@ -11,6 +11,7 @@ export default class MyAccount extends React.Component {
     return (
       <View style={styles.container}>
         <Text>MyAccount</Text>
+        <Button title='Login' onPress={()=>this.goToRegister('Login')}/>
         <Button title='Register' onPress={()=>this.goToRegister('Register')}/>
       </View>
     );

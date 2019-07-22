@@ -7,6 +7,7 @@ import SearchScreen from '../components/tabs/search'
 import MyAccountScreen from '../components/tabs/my-account'
 import TopFiveScreen from '../components/tabs/top-five'
 
+import Login from '../components/login/login'
 import Register from '../components/login/register'
 
 const homeScreenStack = createStackNavigator({
@@ -41,6 +42,12 @@ const myAccountScreenStack = createStackNavigator({
     screen: MyAccountScreen,
     navigationOptions: ({ navigation }) => ({
       title: 'My Account'
+    })
+  },
+  Login: {
+    screen: Login,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Login'
     })
   },
   Register: {
