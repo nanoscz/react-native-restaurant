@@ -2,27 +2,28 @@ import React from 'react';
 import t from 'tcomb-form-native';
 const Form = t.form.Form;
 import Input from './template/input';
+import { Email, Password} from '../../utils/validation/validation'
 
 export const LoginStruct = t.struct({
-  user: t.String,
-  password: t.String
+  email: Email,
+  password: Password
 });
 
-export const loginOptions = {
+export const LoginOptions = {
   fields: {
-      user: {
-        template: Input,
-        config: {
-        placeholder: 'Username',
+    email: {
+      template: Input,
+      config: {
+        placeholder: 'Email',
         secureTextEntry: false,
         iconType: 'font-awesome',
-        iconName: 'user'
+        iconName: 'at'
       }
     },
     password: {
       template: Input,
       config: {
-        placeholder: 'Username',
+        placeholder: 'Password',
         password: true,
         secureTextEntry: true,
         iconType: 'font-awesome',
