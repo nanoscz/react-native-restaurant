@@ -1,12 +1,13 @@
 import React from "react";
 import { StyleSheet, View } from 'react-native';
-import { Button, Text } from 'react-native-elements';
-import { LoginStruct, loginOptions } from './src/components/forms/login';
-import Spinner from './src/components/spinner/spinner'
-import t from 'tcomb-form-native';
+import Spinner from './src/components/spinner/spinner';
+import t from 'tcomb-form-native'
 const Form = t.form.Form;
 import UserNavigator from './src/navigation/user'
 
+import firebaseConfig from './src/utils/firebase/config'
+import * as firebase from 'firebase';
+firebase.initializeApp(firebaseConfig);
 export default class App extends React.Component {
   constructor(){
     super();
