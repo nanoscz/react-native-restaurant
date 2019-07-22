@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { createStackNavigator, createAppContainer, createBottomTabNavigator } from 'react-navigation'
 import { Icon } from 'react-native-elements'
 
-import HomeScreen from '../components/tabs/home'
-import SearchScreen from '../components/tabs/search'
-import MyAccountScreen from '../components/tabs/my-account'
-import TopFiveScreen from '../components/tabs/top-five'
+import HomeScreen from './home'
+import SearchScreen from './search'
+import MyAccountScreen from './my-account'
+import TopFiveScreen from './top-five'
 
-import Login from '../components/login/login'
-import Register from '../components/login/register'
+import Login from '../login/login'
+import Register from '../register/register'
 
 const homeScreenStack = createStackNavigator({
   Home: {

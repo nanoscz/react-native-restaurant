@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import Spinner from './src/components/spinner/spinner';
 import t from 'tcomb-form-native'
 const Form = t.form.Form;
-import UserNavigator from './src/navigation/user'
+import TabsNavigator from './src/components/tabs/tabs'
 
 import firebaseConfig from './src/utils/firebase/config'
 import * as firebase from 'firebase';
@@ -22,7 +22,7 @@ export default class App extends React.Component {
   render(){
     return (
       <View style={styles.container}>
-        <UserNavigator/>
+        <TabsNavigator/>
       </View>
     )
   }
