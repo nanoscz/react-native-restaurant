@@ -6,6 +6,7 @@ import Toast from 'react-native-easy-toast'
 
 import t from 'tcomb-form-native';
 const Form = t.form.Form;
+/** Firebase */
 import * as firebase from 'firebase';
 
 let messagePasswordError = 'The password is not the same.'
@@ -23,7 +24,7 @@ export default class Register extends React.Component {
         email: '',
         password: ''
       },
-      textError: ''
+      formError: ''
     }
   }
   onChange = (formData) => {
@@ -36,7 +37,7 @@ export default class Register extends React.Component {
     console.log(this.state.formData)
     if (value) {
       if (value.password === value.passwordConfirmation) {
-        this.setState({ textError: '' })
+        this.setState({ formError: '' })
         try {
           firebase.auth().createUserWithEmailAndPassword(value.email, value.password)
           .then((resolve) => {
@@ -51,10 +52,10 @@ export default class Register extends React.Component {
           this.handlerError(error)
         }
       } else {
-        this.setState({textError: messagePasswordError})
+        this.setState({formError: messagePasswordError})
       }
     } else {
-      this.setState({textError: messageFormNotValid})
+      this.setState({formError: messageFormNotValid})
     }
   }
 
@@ -63,7 +64,7 @@ export default class Register extends React.Component {
   }
 
   render() {
-    const { registerStruct, registerOptions, formData, textError } = this.state
+    const { registerStruct, registerOptions, formData, formError } = this.state
     return (
       <View style={styles.container}>
         <Form
@@ -74,7 +75,7 @@ export default class Register extends React.Component {
           onChange={value => this.onChange(value)}
         />
         <Button buttonStyle={styles.btnRegister} title='Register' onPress={this.onRegister} />
-        <Text style={styles.textError}>{textError}</Text>
+        <Text style={styles.formError}>{formError}</Text>
         <Toast
           ref="toast"
           style={styles.toast}
@@ -102,7 +103,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 10
   },
-  textError: {
+  formError: {
     color: 'red',
     padding: 30,
     textAlign: 'center'
